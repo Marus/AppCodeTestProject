@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Charts
+import GRDB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        var migrator = DatabaseMigrator()
+        migrator.registerMigration("v1") { (db:Database) in
+            try db.create(table: "t3") { (definition:TableDefinition) in
+
+            }
+            // Type of database is recognized
+        }
+
+        migrator.registerMigration("v2", migrate: { database in
+            try database.create(table: "t4", body: { table in
+
+            })
+            // type of database is recognized
+        })
+
+        migrator.registerMigration("v3") { database in
+            // type of database is not recognized
+
+        }
+
+        migrator.registerMigrationWithDeferredForeignKeyCheck("v5") { database in
+            // type of database is recognized
+        }
+
         return true
     }
 

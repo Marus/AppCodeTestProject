@@ -1,0 +1,20 @@
+PODS:
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
+  - GRDB.swift (2.9.0)
+  - SwiftyZeroMQ (1.0.25)
+
+DEPENDENCIES:
+  - Charts
+  - GRDB.swift
+  - SwiftyZeroMQ
+
+SPEC CHECKSUMS:
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  GRDB.swift: db8429f12d250f3056df82eb3409e5af083948ca
+  SwiftyZeroMQ: defa66cfbebad5835dd056b4114413670bb061f9
+
+PODFILE CHECKSUM: 3da8a8bffb3c037717ff27df8cf9902409827dca
+
+COCOAPODS: 1.4.0
